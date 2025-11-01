@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.db.mmodels import Q
+from django.db.models import Q
 from django.core.paginator import Paginator
 from .models import Phone
 from .forms import PhoneForm
