@@ -5,7 +5,7 @@ import dj_database_url
 from decouple import Config, Csv
 
 # Crée une instance de Config sans 'search_path'
-config = Config()
+config = Config(search_path='.env')  
 
 # Base Directory
 BASE_DIR = Path(__file__).resolve().parent.parent
