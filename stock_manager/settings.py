@@ -3,11 +3,11 @@ from pathlib import Path
 import dj_database_url
 from decouple import Config, Csv
 
-# Utiliser Config et spécifier explicitement le chemin vers .env
-config = Config(search_path=BASE_DIR)  # BASE_DIR est déjà défini comme le répertoire racine du projet
-
 # Base Directory
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Utiliser Config et spécifier explicitement le chemin vers .env
+config = Config(search_path=BASE_DIR)  
 
 # Security settings
 SECRET_KEY = config('SECRET_KEY', default='your-default-secret-key')  # Utilise une clé secrète à partir de la variable d'environnement
