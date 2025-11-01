@@ -1,10 +1,11 @@
+# Stock_Manager\stock_manager\settings.py
 import os
 from pathlib import Path
 import dj_database_url
 from decouple import Config, Csv
 
-# Crée une instance de Config
-config = Config(search_path='.env')
+# Crée une instance de Config sans 'search_path'
+config = Config()
 
 # Base Directory
 BASE_DIR = Path(__file__).resolve().parent.parent
