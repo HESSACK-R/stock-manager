@@ -1,0 +1,15 @@
+{% extends 'stock_app/base.html' %}
+{% block content %}
+<div class="card p-4 shadow-sm text-center">
+  <h4 class="mb-4 text-danger">Are you sure you want to delete:</h4>
+  <p><strong>{{ phone.brand }} {{ phone.name }}</strong></p>
+  {% if phone.image %}
+    <img src="{{ phone.image.url }}" style="max-height: 100px;" class="mb-3">
+  {% endif %}
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="{% url 'phone_list' %}" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+{% endblock %}

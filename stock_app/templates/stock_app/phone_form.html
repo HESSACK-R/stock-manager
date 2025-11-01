@@ -1,0 +1,16 @@
+{% extends 'stock_app/base.html' %}
+{% block content %}
+  <div class="card p-4 shadow-sm">
+    <h3 class="mb-3">
+      {% if edit_mode %}✏️ Edit Phone{% else %}➕ Add New Phone{% endif %}
+    </h3>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="{% url 'phone_list' %}" class="btn btn-secondary">Cancel</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}
