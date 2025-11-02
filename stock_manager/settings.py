@@ -1,13 +1,13 @@
 import os
 from pathlib import Path
 import dj_database_url
-from decouple import Config, Csv
+from decouple import config, Csv
 
 # Base Directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Utiliser Config et spécifier explicitement le chemin vers .env
-config = Config()  
+# # Utiliser Config et spécifier explicitement le chemin vers .env
+# config = Config()  
 
 # Security settings
 SECRET_KEY = config('SECRET_KEY', default='your-default-secret-key')  # Utilise une clé secrète à partir de la variable d'environnement
